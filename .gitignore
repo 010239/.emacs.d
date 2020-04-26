@@ -1,6 +1,7 @@
 elpa/
 transient/
 auto-save-list/
+*~
 *.el~
 .#*.el
 .#.#*.el
