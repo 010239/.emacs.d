@@ -1,3 +1,7 @@
-elps\
-transient\
+elpa/
+transient/
+auto-save-list/
 *.el~
+.#*.el
+.#.#*.el
+.gitignore~
