@@ -16,7 +16,9 @@
 
 (require 'init-edit)
 (require 'init-ui)
+(require 'init-org)
 (require 'init-git)
+(require 'init-projectile)
 
 ;; Restart Emacs
 (use-package restart-emacs 

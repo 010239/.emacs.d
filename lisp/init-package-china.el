@@ -20,7 +20,10 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
+;;
 ;; Settings for use-package package
+;; https://www.helplib.cn/fansisi/use-package
+;;
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))

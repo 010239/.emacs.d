@@ -2,52 +2,63 @@
 In this section, I will introduce how to use magit in an organized way.
 
 ** 从远端Github中获取已有仓库
+*** 上传ssh key
+    1. 在ternimal下输入命令: ssh-keygen -t rsa -C "kkk@gmail.com"，一路回车即可。
+    2. 上传id_rsa.pub
+    2. 在ternimal下输入命令: ssh -T git@github.com  验证.   
 *** 获取项目
-1. 获取clone地址
-2. 在emacs中使用 M-x dired 打开想clone的目录，比如~/XXX
-3. 使用magit指令clone远程项目，M-x magit-clone，输入clone的远程仓库地址并填写clone文件夹名称(xxx)
-4. 按g刷新目录，现在 XXX 文件夹下的 xxx 便是我们远程clone下来的github项目了
+    1. 获取clone地址
+    2. 在emacs中使用 M-x dired 打开想clone的目录，比如~/XXX
+    3. 使用magit指令clone远程项目，M-x magit-clone，输入clone的远程仓库地址并填写clone文件夹名称(xxx)
+    4. 按g刷新目录，现在 XXX 文件夹下的 xxx 便是我们远程clone下来的github项目了
 *** 设置需要stage的文件
-1. n/p键上下移动光标
+    1. n/p键上下移动光标
    移动到unstaged文件，按s键，将其设置为staged
    移动到staged文件，按u键，将其设置为unstaged
    
    如果要查看帮助，按？键
 *** commit 提交改动
-1. 现在我们打开 xxx 的README.md文件，新增内容并保存
-2. 执行M-x magit-status查看git改动情况
-3. 在magit-status窗口下，执行M-x magit-commit或者使用快捷键c c提交改动，左侧将会显示改动具体信息，
+    1. 现在我们打开 xxx 的README.md文件，新增内容并保存
+    2. 执行M-x magit-status查看git改动情况
+    3. 在magit-status窗口下，执行M-x magit-commit或者使用快捷键c c提交改动，左侧将会显示改动具体信息，
 并且在底下指令提示commit everything?(y or n), 输入y，右侧显示要求输入commit的文字描述，输入
-4. 输入完commit信息之后，执行快捷键C-c C-c提交commit
+    4. 输入完commit信息之后，执行快捷键C-c C-c提交commit
 *** push commit到远程github仓库
-1. 在magit窗口下，执行M-x magit-push，push操作，push操作为一系列操作
-2. 选择将要push的本地gitmaster，RET
-3. 在magit-status窗口按快捷键$，打开magit进程magit-process
-4. 验证是否成功push，打开github的远程仓库地址
+    1. 在magit窗口下，执行M-x magit-push，push操作，push操作为一系列操作
+    2. 选择将要push的本地gitmaster，RET
+    3. 在magit-status窗口按快捷键$，打开magit进程magit-process
+    4. 验证是否成功push，打开github的远程仓库地址
 
 ** 本地新建仓库并上传到远端
 
-1. create an empty repository.
+*** create an empty repository.
    
-   | Command                 | description                         |
-   |-------------------------+-------------------------------------|
-   | C-x C-f                 | into directory                      |
-   | + sample-git-repository | create an empty directory           |
-   | C-x g                   | create repository in xxx/? (y or n) |
-   | q                       | quit                                |
-   | g                       | create .git file                    |
-   | C-g C-x b               | switch to buffer ***                |
-   | C-x C-f .gitignore      |                                     |
+   1. 在emacs中使用 M-x dired 打开想工作的目录（或者执行C-x d 进入工作目录），按+键创建仓库名称。
+   2. 进入新创建的目录，在emacs中使用 M-x magit-status RET 创建仓库。
+   3. 按g键，创建.git目录。
    
- 2. create a file in this repository.
-  | Command            | description |   |
-  |--------------------+-------------+---|
-  | C-x C-f .gitignore |             |   |
- | C-x g              |             |   |
+     | Command                 | description                         |
+     |-------------------------+-------------------------------------|
+     | C-x C-f                 | into directory                      |
+     | + sample-git-repository | create an empty directory           |
+     | C-x g                   | create repository in xxx/? (y or n) |
+     | q                       | quit                                |
+     | g                       | create .git file                    |
+     | C-g C-x b               | switch to buffer ***                |
+     | C-x C-f .gitignore      |                                     |
+     |                         |                                     |
+   
+   3. create a file in this repository.
 
-3. stage untracted files
+| Command            | description |   |
+|--------------------+-------------+---|
+| C-x C-f .gitignore |             |   |
+| C-x g              |             |   |
+
+**** TODO
+2. stage untracted files
   C-x s
-4. show staged changes
-5. show unstaged changes
-6. commit staged changes
-7. show log history
+3. show staged changes
+4. show unstaged changes
+5. commit staged changes
+6. show log history
