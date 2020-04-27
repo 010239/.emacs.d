@@ -1,0 +1,141 @@
+
+* 基本语法
+** 字体
+    | 符号     | 描述 |
+    |----------+------|
+    | *粗体*   |      |
+    | /斜体/   |      |
+    | +删除线+ |      |
+    | _下划线_ |      |
+
+** 列表
+*** 无序列表 以 - + * 开头
+
+   - aaa
+     - bbb
+       + ccc
+	 * ddd
+*** 有序列表 以1.或1）开头
+    + aaa
+    + bbb
+    + [X] 
+    + [X] 
+    + [ ] 
+    + [ ] 
+    + [ ] 
+    + [ ] 
+    + [ ] 
+
+    1）
+
+*** 描述列表 以::将描述隔开
+
+  | shortcut       | description              |
+  |----------------+--------------------------|
+  | Tab            | 折叠列表项               |
+  | M-Ret          | 插入项                   |
+  | M-S-Ret        | 插入带复选框的项         |
+  | C-c C-c        | 改变复选框状态           |
+  |----------------+--------------------------|
+  | M-S-Up/Down    | 移动列表项               |
+  | M-Left/Right   | 升/降级列表项 不包括子项 |
+  | M-S-Left/Right | 升/降级列表项 包括子项   |
+  |----------------+--------------------------|
+  |                |                          |
+  | C-c -          | 更换列表标记             |
+  |                |                          |
+
+* TODO Table  
+  
+| shortcut key   | description                |
+|----------------+----------------------------|
+| C-c RET        | 生成表格                   |
+| Tab            | 移动到下一个区域           |
+| S-Tab          |                            |
+| S-Ret          | 移动至下一行               |
+| M-Left/Right   |                            |
+| M-Up/Down      |                            |
+| M-S-Left/Right |                            |
+| M-S-Left/Right |                            |
+| C-c -          | 插入水平分割线             |
+| C-c Ret        | 插入水平分割线并跳到下一行 |
+|                |                            |
+|----------------+----------------------------|
+
+
+* Hyperlinks
+
+  | shortcut key | description |
+
+  baidu[[http:www.baidu.com][baidu]]
+
+
+* TODO Items
+** TODO Basics
+   
+   Any headline becomes a TODO item when it starts with the word 'TODO', for example:
+   *** TODO write letter to XXX
+
+   C-c C-t(org-todo) : Rotate the TODO state of the current item among
+   .-> (unmarked) -> TODO -> DONE --.
+   '--------------------------------'
+
+   C-c / t (org-show-todo-tree)
+
+   
+
+** TODO Extensions
+   
+   By default, marked TODO entries have one of only two states: TODO and DONE.
+   Org mode allows you to classify TODO items in more complex ways with TODO keywords
+   (stored org-todo-keywords).
+*** Workflow states
+    (setq org-todo-keywords
+          '((sequence "TODO" "" "" "|" ""))')
+*** TODO keywords as types
+    (setq org-todo-keywords '((type "" "" ""))'
+*** Multiple sets in one file
+
+*** Fast access to TODO states
+
+*** Per-file keywords
+*** Faces for TODO keywords
+*** TODO dependencies
+   
+
+** Progress Logging
+
+** Priorities
+
+
+** Breaking Down Tasks
+
+** Checkboxes
+
+
+* Tags
+
+* Date and Times
+
+  C-c . <2020-04-19 Sun>
+
+  C-c ! [2020-04-26 Sun]
+
+  <2020-04-19 Sun>
+  
+
+
+* Org Capture and Attachments
+
+* Agenda Views
+
+* markup for Rich Contents
+
+
+
+* Export to other format (C-c C-e)
+** HTML Export
+
+* Working with Srouce Code
+
+* Org Reveal
